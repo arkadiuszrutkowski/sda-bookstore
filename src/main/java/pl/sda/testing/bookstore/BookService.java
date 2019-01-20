@@ -14,6 +14,7 @@ public class BookService {
 
     public List<Book> getBooksFromAuthor(String author) {
         List<Book> books = bookApi.fetchBooksByAuthor(author);
+        bookStore.saveBooks(books);
         return books;
     }
 }
